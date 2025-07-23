@@ -2,7 +2,6 @@ import { buttonVariants } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import Logo from '@/public/logo.png'
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -19,7 +18,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
       </Link>
       <div className="flex w-full max-w-sm flex-col gap-6">
         <Link href="/" className="flex items-center gap-2 self-center font-medium">
-          <Image src={Logo} alt="logo" width={32} height={32} />
+          <Image src="/logo.png" alt="logo" width={32} height={32} />
           EpxCMS
         </Link>
         {children}
