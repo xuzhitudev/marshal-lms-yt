@@ -1,9 +1,16 @@
-import { GalleryVerticalEnd } from "lucide-react"
+import { auth } from '@/lib/auth'
+import { headers } from 'next/headers'
+import { LoginForm } from './_components/login-form'
+import { redirect } from 'next/navigation'
 
-import { LoginForm } from "./_components/login-form"
+export default async function LoginPage() {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  })
 
-export default function LoginPage() {
-  return (
-    <LoginForm />
-  )
+  if (session) {
+    return redirect('/')
+  }
+
+  return <LoginForm />
 }
