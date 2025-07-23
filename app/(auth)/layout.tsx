@@ -1,23 +1,19 @@
-import { buttonVariants } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
-import Logo from "@/public/logo.png";
+import { buttonVariants } from '@/components/ui/button'
+import { ArrowLeft } from 'lucide-react'
+import Link from 'next/link'
+import Image from 'next/image'
+import Logo from '@/public/logo.png'
 
-export default function AuthLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
-		
     <div className="relative flex min-h-svh items-center justify-center">
       <Link
         href="/"
         className={buttonVariants({
           variant: 'outline',
           className: 'absolute top-4 left-4',
-        })}>
+        })}
+      >
         <ArrowLeft className="size-4" />
         Back
       </Link>
@@ -39,5 +35,5 @@ export default function AuthLayout({
         </div>
       </div>
     </div>
-	);
+  )
 }
